@@ -11,8 +11,8 @@ var config = {
         dbName: 'blogio'
     },
     twitter: {
-        consumerKey: 'qdJy5WxPRoROnhm4fPSTmQ',
-        consumerSecret: 'CHcINdZU9WMu4JwBitrd41upVgJwXoyardykmjdO4Bk'
+        consumerKey: 'A11HEmPbDNGOzWlxHbVIw',
+        consumerSecret: 'w02ihgnnhXJwd1r6mINyUV7NRNFi6lwccNT631UvA'
     },
     public: {
         blogName: 'postit',
