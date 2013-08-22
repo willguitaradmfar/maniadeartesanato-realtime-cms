@@ -1,7 +1,7 @@
 var config = {
     domain: {
-        host: 'http://localhost',
-        port: '3005'
+        host: 'http://maniadeartesanato.com.br/',
+        port: ''
     },
     env: 'dev', // dev or prod
     mongodb: {
@@ -11,8 +11,8 @@ var config = {
         dbName: 'blogio'
     },
     twitter: {
-        consumerKey: 'qdJy5WxPRoROnhm4fPSTmQ',
-        consumerSecret: 'CHcINdZU9WMu4JwBitrd41upVgJwXoyardykmjdO4Bk'
+        consumerKey: '6NFX5SIU3IiZYxcLfyGw5A',
+        consumerSecret: 'Nx5VwraYF0b1pAOZa7Cy3RXN84Mk7jHBzCzo41GNg'
     },
     public: {
         blogName: 'postit',
