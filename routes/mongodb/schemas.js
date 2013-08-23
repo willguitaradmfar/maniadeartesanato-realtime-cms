@@ -33,7 +33,7 @@ var articleSchema = mongoose.Schema({
     slug: String,
     category: {
         type: String,
-        default: 'No category'
+        default: 'Sem categoria'
     },
     content: String,
     postDate: {
@@ -51,7 +51,21 @@ var articleSchema = mongoose.Schema({
     author: Object
 });
 
+var mediaSchema = mongoose.Schema({
+    title: String,
+    description: String,
+    category: {
+        type: String,
+        default: 'Sem categoria'
+    },    
+    postDate: {
+        type: Date,
+        default: Date.now
+    }   
+});
+
 module.exports = {
     User: mongoose.model('user', userSchema),
-    Article: mongoose.model('article', articleSchema)
+    Article: mongoose.model('article', articleSchema),
+    Media: mongoose.model('media', mediaSchema)
 };

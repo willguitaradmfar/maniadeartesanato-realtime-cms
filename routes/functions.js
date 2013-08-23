@@ -10,6 +10,16 @@ module.exports = function(app, db) {
             });
         },
 
+        getMedias: function (callback) {
+            db.Media.find(function (err, media) {
+                if (media.length > 0) {
+                    callback(media);
+                } else {
+                    callback(null);
+                }
+            });
+        },
+
         getUserById: function (id, callback) {
             db.User.findOne({_id: id}, function (err, user) {
                 if (user) {
