@@ -1,6 +1,6 @@
 var config = {
     domain: {
-        host: 'http://localhost:8082',
+        host: process.env.host,
         port: ''
     },
     env: 'dev', // dev or prod
@@ -11,8 +11,8 @@ var config = {
         dbName: 'blogio'
     },
     twitter: {
-        consumerKey: 'LbWcGKtsfxhXgLkfzqK1Ww',
-        consumerSecret: '0s7JCoQuP5ubz73MQ2ueoJLQYjcAMK25x1PFAbG64'
+        consumerKey: process.env.consumerKey,
+        consumerSecret: process.env.consumerSecret
     },
     public: {
         blogName: 'postit',
