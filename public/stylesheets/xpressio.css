@@ -1276,8 +1276,9 @@ img.top {
   -ms-background-image: url("/img/bonequinha.gif");
   -o-background-image: url("/img/bonequinha.gif");
   background-image: url("/img/bonequinha.gif");
-  background-size: 288px;
+  background-size: 260px;
   background-repeat: no-repeat;
+  background-position: 50px;
 }
 .col1 {
   width: 3.787878787878788%;
