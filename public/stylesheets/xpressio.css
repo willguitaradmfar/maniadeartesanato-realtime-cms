@@ -93,6 +93,7 @@ body {
   -o-background-image: url("/img/fundo.jpg");
   background-image: url("/img/fundo.jpg");
   background-attachment: fixed;
+  background-position-x: -194px;
 }
 html {
   font-family: Lato;
@@ -1245,6 +1246,12 @@ img.top {
 .row {
   width: 100%;
   background-color: #fff;
+  -webkit-background-image: url("/img/coluna_direita.gif");
+  -moz-background-image: url("/img/coluna_direita.gif");
+  -ms-background-image: url("/img/coluna_direita.gif");
+  -o-background-image: url("/img/coluna_direita.gif");
+  background-image: url("/img/coluna_direita.gif");
+  background-position-x: 408px;
   *zoom: 1;
 }
 .row:before,
