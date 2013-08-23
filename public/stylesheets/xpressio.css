@@ -87,6 +87,12 @@ html,
 body {
   width: 100%;
   height: 100%;
+  -webkit-background-image: url("/img/fundo.jpg");
+  -moz-background-image: url("/img/fundo.jpg");
+  -ms-background-image: url("/img/fundo.jpg");
+  -o-background-image: url("/img/fundo.jpg");
+  background-image: url("/img/fundo.jpg");
+  background-attachment: fixed;
 }
 html {
   font-family: Lato;
@@ -108,6 +114,7 @@ section {
 }
 header {
   line-height: 3em;
+  position: fixed;
 }
 nav ul {
   list-style: none;
@@ -1128,7 +1135,7 @@ img.top {
   padding: 10px;
 }
 .padding_big {
-  padding: 30px;
+  padding: 80px;
 }
 .padding_top_small {
   padding-top: 4px;
@@ -1137,7 +1144,7 @@ img.top {
   padding-top: 10px;
 }
 .padding_top_big {
-  padding-top: 30px;
+  padding-top: 80px;
 }
 .padding_right_small {
   padding-right: 4px;
@@ -1146,7 +1153,7 @@ img.top {
   padding-right: 10px;
 }
 .padding_right_big {
-  padding-right: 30px;
+  padding-right: 80px;
 }
 .padding_bottom_small {
   padding-bottom: 4px;
@@ -1155,7 +1162,7 @@ img.top {
   padding-bottom: 10px;
 }
 .padding_bottom_big {
-  padding-bottom: 30px;
+  padding-bottom: 80px;
 }
 .padding_left_small {
   padding-left: 4px;
@@ -1164,7 +1171,7 @@ img.top {
   padding-left: 10px;
 }
 .padding_left_big {
-  padding-left: 30px;
+  padding-left: 80px;
 }
 .p_absolute {
   position: absolute;
@@ -1237,6 +1244,7 @@ img.top {
 }
 .row {
   width: 100%;
+  background-color: #fff;
   *zoom: 1;
 }
 .row:before,
