@@ -93,7 +93,7 @@ body {
   -o-background-image: url("/img/fundo.jpg");
   background-image: url("/img/fundo.jpg");
   background-attachment: fixed;
-  background-position-x: -194px;
+  background-position: -194px center;
 }
 html {
   font-family: Lato;
@@ -1251,7 +1251,7 @@ img.top {
   -ms-background-image: url("/img/coluna_direita.gif");
   -o-background-image: url("/img/coluna_direita.gif");
   background-image: url("/img/coluna_direita.gif");
-  background-position-x: 408px;
+  background-position: 408px center;
   *zoom: 1;
 }
 .row:before,
@@ -1277,7 +1277,7 @@ img.top {
   width: 20.454545454545457%;
 }
 .col4 {
-  width: 22.787879%
+  width: 22.787879%;
 }
 .col5 {
   width: 37.121212121212125%;
