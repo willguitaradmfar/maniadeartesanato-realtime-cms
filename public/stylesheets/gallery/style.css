@@ -1,7 +1,7 @@
 .rg-image-wrapper{
 	position:relative;
 	padding:20px 30px;
-	background:transparent url(../images/black.png) repeat top left;
+	background:transparent url(../img/black.png) repeat top left;
 	-moz-border-radius: 10px;
 	-webkit-border-radius: 10px;
 	border-radius: 10px;
@@ -87,7 +87,7 @@
 	position:absolute;
 	top:50%;
 	left:50%;
-	background:#000 url(../images/ajax-loader.gif) no-repeat center center;
+	background:#000 url(img/ajax-loader.gif) no-repeat center center;
 	margin:-23px 0px 0px -23px;
 	z-index:100;
 	-moz-border-radius: 10px;

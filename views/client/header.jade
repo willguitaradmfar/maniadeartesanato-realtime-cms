@@ -9,6 +9,9 @@ html
         title= data.title
         link(rel='stylesheet', href='/font/font-awesome.min.css')
         link(rel='stylesheet', href='/stylesheets/xpressio.css')
+        
+        link(rel='stylesheet', href='/stylesheets/gallery/style.css')
+        link(rel='stylesheet', href='/stylesheets/gallery/elastislide.css')
 
         meta(name="description", content= data.description)
 
@@ -34,6 +37,16 @@ html
             script(src='/javascripts/app/client/views/sidebar.js')
             
             script(src='/javascripts/app/client/client.js')
+
+
+
+            script(type="text/javascript", src='/javascripts/vendors/gallery/jquery.tmpl.min.js')
+            script(type="text/javascript", src='/javascripts/vendors/gallery/jquery.easing.1.3.js')
+            script(type="text/javascript", src='/javascripts/vendors/gallery/jquery.elastislide.js')
+            script(type="text/javascript", src='/javascripts/vendors/gallery/gallery.js')
+
+        script(id="img-wrapper-tmpl", type="text/x-jquery-tmpl", src="/javascripts/vendors/gallery/template.js")           
+        
     body
         block content
         include footer

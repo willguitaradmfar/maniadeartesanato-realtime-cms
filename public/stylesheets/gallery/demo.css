@@ -1,21 +1,17 @@
 @import url('reset.css');
 
 /* General Codrops Demo Style */
-body{
-	background:#1F1F1F url(../images/pattern.png) repeat top left;
-	color:#fff;
-	font-family: 'PT Sans Narrow', Arial, sans-serif;
-	font-size:14px;
+body{		
+	
 }
 a{
-	color:#ddd;
-	text-decoration:none;
+	
 }
 a:hover{
-	color:#00c6e3;
+	
 }
 p.sub{
-	padding:25px 10px 10px 10px;
+	
 	text-align:left;
 	color:#aaa;
 }
