@@ -15,8 +15,8 @@ var config = {
         consumerSecret: process.env.consumerSecret
     },
     public: {
-        blogName: 'postit',
-        blogDescription: 'Small lightweight and real-time system blogging',
+        blogName: 'Mania de Artesanato',
+        blogDescription: 'Márcia Braga',
         api: {
             articles: '/articles',
             articlesPublished: '/articlespublished',
@@ -26,7 +26,7 @@ var config = {
             authTwitter: '/auth/twitter',
             authTwitterCallback: '/auth/twitter/callback',
             admin: '/admin',
-            blog: '/blog'
+            blog: ''
         }
     }
 };
