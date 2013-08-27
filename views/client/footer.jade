@@ -1,7 +1,33 @@
-if env == "prod"
-    script(src='/javascripts/vendors/vendors.js')
+if env == "prod" 
+
+    script(src='/javascripts/vendors/jquery.js')
+    script(src='/javascripts/vendors/underscore.js')
+    script(src='/javascripts/vendors/backbone.js')
+    script(src='/javascripts/vendors/backbone.marionette.js')
     script(src='/javascripts/vendors/socket.io.js')
+    script(src='/javascripts/vendors/jquery.timeago.js')
+    script(src='/javascripts/vendors/q.js')
+
+    script(src='/javascripts/init.js')
+    
+    script(src='/javascripts/app/client/models/article.js')
+
+    script(src='/javascripts/app/client/collections/articles.js')
+
+    script(src='/javascripts/app/client/routers/router.js')
+
+    script(src='/javascripts/app/client/views/article.js')
+    script(src='/javascripts/app/client/views/articles.js')
+    script(src='/javascripts/app/client/views/sidebar.js')
+    
     script(src='/javascripts/app/client/client.js')
+
+
+
+    script(type="text/javascript", src='/javascripts/vendors/gallery/jquery.tmpl.min.js')
+    script(type="text/javascript", src='/javascripts/vendors/gallery/jquery.easing.1.3.js')
+    script(type="text/javascript", src='/javascripts/vendors/gallery/jquery.elastislide.js')
+    script(type="text/javascript", src='/javascripts/vendors/gallery/gallery.js')
     script
         var _gaq = _gaq || [];
         _gaq.push(['_setAccount', 'UA-37067122-1']);

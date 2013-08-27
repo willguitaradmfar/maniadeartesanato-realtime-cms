@@ -3,7 +3,7 @@ var config = {
         host: process.env.host,
         port: ''
     },
-    env: 'dev', // dev or prod
+    env: 'prod', // dev or prod
     mongodb: {
         credentials: '', // username:password@
         host: 'localhost',
