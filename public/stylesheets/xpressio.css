@@ -1633,6 +1633,18 @@ img.top {
 article {
   color: #444;
 }
+.mania-topico {
+  -webkit-background-image: url("../img/botao.gif");
+  -moz-background-image: url("../img/botao.gif");
+  -ms-background-image: url("../img/botao.gif");
+  -o-background-image: url("../img/botao.gif");
+  background-image: url("../img/botao.gif");
+  background-repeat: no-repeat;
+  background-size: 26px;
+  background-position: 0px;
+  padding-left: 30px;
+  border-bottom: solid 1px #b22222;
+}
 #notifications {
   line-height: 20px;
 }
