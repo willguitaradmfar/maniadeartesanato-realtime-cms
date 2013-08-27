@@ -25,7 +25,7 @@ module.exports = function(app, config, db, query) {
                 if (err) console.log(JSON.stringify(err));
                     //res.send('File uploaded to: ' + local_path + ' - ' + req.files.my_file.size + ' bytes');
                     //res.sendfile(__dirname + '/public/success.html');
-                    res.send(200, {status:"Ok", tmp : process.env.TMP});
+                    res.send(200, {status:"Ok", tmp : process.env.TMP, def : process.env.PATH_UPLOAD});
                 });
                 helper.removeAllFiles(process.env.TMP);
             });
