@@ -1,0 +1,1 @@
+export TMP=/home/william/Desktop/tmp1/;export PATH_UPLOAD=/home/william/Desktop/;export consumerKey=LbWcGKtsfxhXgLkfzqK1Ww;export consumerSecret=0s7JCoQuP5ubz73MQ2ueoJLQYjcAMK25x1PFAbG64;export host=http://localhost:8082;npm start

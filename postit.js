@@ -10,6 +10,7 @@ var app             = express();
 
 var query           = require('./routes/functions')(app, db),
     config          = require('./routes/config');
+    
 
 app.configure(function() {
     app.set('port', process.env.PORT || config.domain.port);
@@ -25,6 +26,7 @@ app.configure(function() {
     app.use(passport.session());
     app.use(app.router);
     app.use(require('stylus').middleware(__dirname + '/public'));
+    app.use(express.bodyParser({uploadDir:process.env.TMP}));
     app.use(express.static(path.join(__dirname, 'public')));
 });
 
