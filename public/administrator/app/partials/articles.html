@@ -1,0 +1,78 @@
+
+<div class="span12">
+				<div ng-class="msg.type" id="aviso">
+					 <button type="button" class="close" data-dismiss="alert">×</button>
+					<h4>
+						{{msg.title}}
+					</h4> {{msg.content}}
+				</div>
+				
+				<a id="modal-230951" href="#modal-container-230951" role="button" class="btn btn-inverse" data-toggle="modal" style="display : {{artigo.isEditar}}" ng-click="novo()">Novo Artigo</a>
+				<hr/>				
+			<table class="table table-bordered table-hover">
+				<thead>
+					<tr>
+						<th>
+							Visitas
+						</th>
+						<th>
+							Titulo
+						</th>
+						<th>
+							Categoria
+						</th>
+						<th>
+							Qtde Comentário
+						</th>
+						<th>
+							Opções
+						</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="artigo in artigos" ng-class="artigo.classNameRow">
+						<td>
+							{{artigo.views}}
+						</td>
+						<td>
+							{{artigo.title}}
+						</td>
+						<td>
+							{{artigo.category}}
+						</td>
+						<td>
+							{{artigo.comments.length}}							
+						</td>
+						<td>							
+							<a id="modal-230951" href="#modal-container-230951" role="button" class="btn" data-toggle="modal" ng-click="editar(artigo)" style="display : {{artigo.isEditar}}">Editar</a>
+							<a class="btn" data-toggle="modal" ng-click="excluir(artigo)" style="display : {{artigo.isExcluir}}">Excluir</a>
+						</td>
+					</tr>					
+					
+				</tbody>
+			</table>			
+			
+			<div id="modal-container-230951" class="modal hide fade" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+					<h3 id="myModalLabel">
+						{{newArtigo.title.toUpperCase()}} <small>@{{newArtigo.category}}</small>
+					</h3>
+				</div>
+				<div class="modal-body">										
+							 
+							 <label>Título</label>
+							 <input type="text" ng-model="newArtigo.title"/> 
+							 <label>Descrição</label>
+							 <input type="text" ng-model="newArtigo.description"/> 
+							 <label>Categoria</label>
+							 <input type="text" ng-model="newArtigo.category"/> 
+												
+					<textarea name="textarea" class="jqte-test" ></textarea>					
+				</div>
+				<div class="modal-footer">
+					 <button class="btn" data-dismiss="modal" aria-hidden="true">Fechar</button> 
+					 <button class="btn btn-primary" ng-click="salvar(newArtigo)" aria-hidden="true" data-dismiss="modal">Salvar</button>
+				</div>
+			</div>
+</div>
