@@ -37,8 +37,7 @@ var injectSchemaMongo = function(code) {
 	    fs.writeFile(process.env.gFILESCHEMA, tpl, function(err) {
 		    if(err)console.log(err);
 		     else {
-		        console.log("Schema Injetado"+process.env.gNOMEQ);
-		        
+		        console.log("Schema Injetado"+process.env.gNOMEQ);		        
 		    }
 		});
 
@@ -115,6 +114,10 @@ var api = function() {
 		    } else {
 		        console.log("Gerado API "+process.env.gNOMEQ);
 		        injectAPI();
+
+				fs.rename(process.env.gNOME+"API.js", process.env.gPATHAPI+"/"+process.env.gNOME+"API.js", function(err){
+				    if(err)throw err;
+				});	
 		    }
 		});
 
@@ -132,7 +135,7 @@ var injectAPI = function() {
 	    fs.writeFile(process.env.gFILEMAIN, tpl, function(err) {
 		    if(err)console.log(err);
 		     else {
-		        console.log("Require API Injetado"+process.env.gNOMEQ);		        
+		        console.log("Require API Injetado"+process.env.gNOMEQ);		        		        
 		    }
 		});	
 
@@ -157,6 +160,10 @@ var functions = function() {
 		    else {		    	
 		        console.log("Gerado Functions "+process.env.gNOMEQ);
 		        injectFunctions();
+
+		        fs.rename(process.env.gNOME+"Function.js", process.env.gPATHFUNCTIONS+"/"+process.env.gNOME+"Function.js", function(err){
+				    if(err)throw err;
+				});
 		    }
 		});
 

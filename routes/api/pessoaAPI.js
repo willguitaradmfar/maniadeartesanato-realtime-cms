@@ -1,6 +1,6 @@
 module.exports = function(app, config, db, query) {
 
-    app.get('/pessoas', function(req, res) {        
+    app.get('/pessoas/all', function(req, res) {        
         query.pessoa.getPessoas(function(pessoa) {
             res.send(pessoa);
         });

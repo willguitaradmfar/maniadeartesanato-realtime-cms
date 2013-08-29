@@ -10,8 +10,8 @@ var app             = express();
 
 var query           = {};
     query.fuctions  = require('./routes/functions')(app, db);
-	query.pessoa    = require('./routes/pessoaFunction')(app, db);//$requireFunctions$
-
+	query.pessoa    = require('./routes/pessoaFunction')(app, db);
+	query.foto    = require('./routes/fotoFunction')(app, db);//$requireFunctions$
 
     config          = require('./routes/config');
     
@@ -49,7 +49,8 @@ require('./routes/api/users')(app, config, db, query);
 require('./routes/api/media')(app, config, db, query);
 require('./routes/auth')(app, config, db, passport, TwitterStrategy);
 require('./routes/views/client')(app, config, query);
-require('./routes/api/pessoaAPI')(app, config, db, query);//$requireAPI$
+require('./routes/api/pessoaAPI')(app, config, db, query);
+require('./routes/api/fotoAPI')(app, config, db, query);//$requireAPI$
 
 server.listen(app.get('port'), function(){
     console.log('Express server listening on port ' + app.get('port'));

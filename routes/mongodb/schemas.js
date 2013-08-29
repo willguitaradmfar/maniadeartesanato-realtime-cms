@@ -69,11 +69,18 @@ var pessoaSchema = mongoose.Schema(
     				'nome': 'String',
     				'telephone': 'String'})
 );
+
+var fotoSchema = mongoose.Schema(
+    ({'uid': 'String',
+    				'nome': 'String',
+    				'nomeFile': 'String'})
+);
 //$varNewSchema$
 
 module.exports = {
     User: mongoose.model('user', userSchema),
     Article: mongoose.model('article', articleSchema),
     Media: mongoose.model('media', mediaSchema),
-    Pessoa: mongoose.model('pessoa', pessoaSchema)//$newSchema$
+    Pessoa: mongoose.model('pessoa', pessoaSchema),
+    Foto: mongoose.model('foto', fotoSchema)//$newSchema$
 };

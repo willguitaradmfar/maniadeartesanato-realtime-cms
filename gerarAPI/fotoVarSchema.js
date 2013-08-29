@@ -1,0 +1,1 @@
+    Foto: mongoose.model('foto', fotoSchema)//$newSchema$
