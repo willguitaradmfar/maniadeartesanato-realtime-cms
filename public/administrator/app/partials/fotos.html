@@ -1,0 +1,77 @@
+
+<div class="span12">
+				<div ng-class="msg.type" id="aviso">
+					 <button type="button" class="close" data-dismiss="alert">×</button>
+					<h4>
+						{{msg.title}}
+					</h4> {{msg.content}}
+				</div>
+				
+				<a id="modal-230951" href="#modal-container-230951" role="button" class="btn btn-inverse" data-toggle="modal" style="display : {{foto.isEditar}}" ng-click="novo()">Nova Foto</a>
+				<hr/>				
+			<table class="table table-bordered table-hover">
+				<thead>
+					<tr>
+						<th>
+							Nome
+						</th>
+						<th>
+							Nome do arquivo
+						</th>
+						<th>
+							Extenção
+						</th>
+						<th>
+							Imagem
+						</th>
+						<th>
+							Opções
+						</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="foto in fotos" ng-class="foto.classNameRow">
+						<td>
+							{{foto.nome}}
+						</td>
+						<td>
+							{{foto.nomeFile}}
+						</td>
+						<td>
+							{{foto.ext}}
+						</td>
+						<td>
+							<img ng-src="img/upload/{{foto._id}}.{{foto.ext}}" />								
+						</td>
+						<td>							
+							<a id="modal-230951" href="#modal-container-230951" role="button" class="btn" data-toggle="modal" ng-click="editar(foto)" style="display : {{foto.isEditar}}">Editar</a>
+							<a class="btn" data-toggle="modal" ng-click="excluir(foto)" style="display : {{foto.isExcluir}}">Excluir</a>
+						</td>
+					</tr>					
+					
+				</tbody>
+			</table>			
+			
+			<div id="modal-container-230951" class="modal hide fade" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+					<h3 id="myModalLabel">
+						{{newFoto.nome}} <small>@Carregar Foto</small>
+					</h3>
+				</div>
+				<div class="modal-body">										
+					<form id="uploadFoto" class="rounded" method="post" enctype="multipart/form-data" action="/file-upload"> 
+						<label>Nome</label>
+						<input type="text" ng-model="newFoto.nome"/> 
+						<label>Arquivo</label>						
+						<input type="file" name="my_file" ng-model="newFoto.nomeFile">
+						<input type="button" name="Submit" class="button" value="Submit" ng-click="upload()">
+					</form>												
+					
+				</div>
+				<div class="modal-footer">
+					 <button class="btn" data-dismiss="modal" aria-hidden="true">Fechar</button> 
+					 <button class="btn btn-primary" ng-click="salvar(newFoto)" aria-hidden="true" data-dismiss="modal">Enviar</button>
+				</div>
+			</div>
+</div>
