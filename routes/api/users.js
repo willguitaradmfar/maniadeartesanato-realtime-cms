@@ -1,7 +1,7 @@
 module.exports = function(app, config, db, query) {
     app.get('/users', function(req, res) {
         if (req.user) {
-            query.getUsers(function(users) {
+            query.fuctions.getUsers(function(users) {
                 res.send(users);
             });
         } else {
@@ -40,7 +40,7 @@ module.exports = function(app, config, db, query) {
 
         var id = req.params.id;
 
-        query.getUserById(id, function (user) {
+        query.fuctions.getUserById(id, function (user) {
             user.fullName = req.body.fullName;
             user.email = req.body.email;
 
@@ -60,7 +60,7 @@ module.exports = function(app, config, db, query) {
 
         var id = req.params.id;
 
-        query.getUserById(id, function (user) {
+        query.fuctions.getUserById(id, function (user) {
             io.sockets.emit('notifications', '<div class="bck b_red_light text color c_red padding_small"><div>' + user.username + '</div> <strong>removed</strong></div>');
 
             user.remove();

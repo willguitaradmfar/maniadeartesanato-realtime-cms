@@ -23,7 +23,7 @@ module.exports = function(app, config, query) {
     app.get(config.public.url.blog + '/:id', function(req, res) {
         console.log(req.user);
         
-        query.getPostBySlug(req.params.id, function(article) {
+        query.fuctions.getPostBySlug(req.params.id, function(article) {
             res.render('client/index', {
                 user: req.user,
                 env: config.env,

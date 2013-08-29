@@ -1,12 +1,12 @@
 module.exports = function(app, config, db, query) {
     app.get('/articles', function(req, res) {
-        query.getPostByDate(function(posts) {
+        query.fuctions.getPostByDate(function(posts) {
             res.send(posts);
         });
     });
 
     app.get('/articlespublished', function(req, res) {
-        query.getPostByDateP(function(posts) {
+        query.fuctions.getPostByDateP(function(posts) {
             res.send(posts);
         });
     });
@@ -50,7 +50,7 @@ module.exports = function(app, config, db, query) {
 
         req.body.content = req.body.content.replace(/<script>.*<\/script>/gi, "");
 
-        query.getPostById(id, function (article) {
+        query.fuctions.getPostById(id, function (article) {
             article.title = req.body.title;
             article.slug = req.body.slug;
             article.category = req.body.category;
@@ -76,7 +76,7 @@ module.exports = function(app, config, db, query) {
 
         var id = req.params.id;
 
-        query.getPostById(id, function (article) {
+        query.fuctions.getPostById(id, function (article) {
             io.sockets.emit('notifications', '<div class="bck b_red_light text color c_red padding_small"><div>' + article.title + '</div> <strong>removed</strong></div>');
 
             article.remove();

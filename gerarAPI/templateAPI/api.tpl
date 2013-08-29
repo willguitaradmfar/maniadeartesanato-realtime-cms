@@ -1,14 +1,14 @@
 module.exports = function(app, config, db, query) {
 
     app.get('/$$name$$s', function(req, res) {
-        query.get$$nameQ$$s(function($$name$$) {
+        query.$$name$$.get$$nameQ$$s(function($$name$$) {
             res.send($$name$$);
         });
     });
 
     app.get('/$$name$$/:id', function(req, res) {
         var id = req.params.id; 
-        query.get$$nameQ$$ById(id, function($$name$$) {
+        query.$$name$$.get$$nameQ$$ById(id, function($$name$$) {
             res.send($$name$$);
         });
     });
@@ -40,7 +40,7 @@ module.exports = function(app, config, db, query) {
 
         var id = req.params.id;        
 
-        query.get$$nameQ$$ById(id, function (new$$nameQ$$) {
+        query.$$name$$.get$$nameQ$$ById(id, function (new$$nameQ$$) {
 
         //new$$nameQ$$.title = req.body.title;
             $$schema$$            
@@ -61,7 +61,7 @@ module.exports = function(app, config, db, query) {
 
         var id = req.params.id;
 
-        query.get$$nameQ$$ById(id, function (new$$nameQ$$) {
+        query.$$name$$.get$$nameQ$$ById(id, function (new$$nameQ$$) {
             io.sockets.emit('notifications', '');
 
             new$$nameQ$$.remove();

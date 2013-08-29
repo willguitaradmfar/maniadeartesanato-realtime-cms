@@ -28,7 +28,7 @@ var userSchema = mongoose.Schema({
     salt: String
 });
 
-var articleSchema = mongoose.Schema({
+var articleSchema = mongoose.Schema({ 
     title: String,
     slug: String,
     category: {
@@ -64,6 +64,13 @@ var mediaSchema = mongoose.Schema({
     }   
 });
 
+
+
+var pessoaSchema = mongoose.Schema(
+    ({'uid': 'String',
+    				'nome': 'String',
+    				'telephone': 'String'})
+);
 var pessoaSchema = mongoose.Schema(
     ({'uid': 'String',
     				'nome': 'String',
@@ -75,5 +82,6 @@ module.exports = {
     User: mongoose.model('user', userSchema),
     Article: mongoose.model('article', articleSchema),
     Media: mongoose.model('media', mediaSchema),
-    Pessoa: mongoose.model('pessoa', pessoaSchema)//$newSchema$
+    Pessoa: mongoose.model('pessoa', pessoaSchema),
+    Pessoa: mongoose.model('pessoa', pessoaSchema)//$newSchema$       
 };

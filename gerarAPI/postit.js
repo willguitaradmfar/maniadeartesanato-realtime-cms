@@ -7,11 +7,10 @@ var express         = require('express'),
 var app             = express();
     server          = require('http').createServer(app),
     io              = require('socket.io').listen(server);
-
 var query           = {};
     query.fuctions  = require('./routes/functions')(app, db);
+	query.pessoa    = require('./routes/pessoaFunction')(app, db);
 	query.pessoa    = require('./routes/pessoaFunction')(app, db);//$requireFunctions$
-
 
     config          = require('./routes/config');
     
@@ -46,9 +45,12 @@ app.get('/postit/config', function(req, res) {
 require('./routes/views/admin')(app, config, passport);
 require('./routes/api/articles')(app, config, db, query);
 require('./routes/api/users')(app, config, db, query);
+require('./routes/api/pessoaAPI')(app, config, db, query);
 require('./routes/api/media')(app, config, db, query);
 require('./routes/auth')(app, config, db, passport, TwitterStrategy);
 require('./routes/views/client')(app, config, query);
+require('./routes/api/pessoaAPI')(app, config, db, query);
+require('./routes/api/pessoaAPI')(app, config, db, query);
 require('./routes/api/pessoaAPI')(app, config, db, query);//$requireAPI$
 
 server.listen(app.get('port'), function(){

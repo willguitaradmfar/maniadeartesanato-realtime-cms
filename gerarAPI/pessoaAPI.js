@@ -1,14 +1,14 @@
 module.exports = function(app, config, db, query) {
 
     app.get('/pessoas', function(req, res) {
-        query.getPessoas(function(pessoa) {
+        query.pessoa.getPessoas(function(pessoa) {
             res.send(pessoa);
         });
     });
 
     app.get('/pessoa/:id', function(req, res) {
         var id = req.params.id; 
-        query.getPessoaById(id, function(pessoa) {
+        query.pessoa.getPessoaById(id, function(pessoa) {
             res.send(pessoa);
         });
     });
@@ -43,7 +43,7 @@ module.exports = function(app, config, db, query) {
 
         var id = req.params.id;        
 
-        query.getPessoaById(id, function (newPessoa) {
+        query.pessoa.getPessoaById(id, function (newPessoa) {
 
         //newPessoa.title = req.body.title;
             
@@ -67,7 +67,7 @@ module.exports = function(app, config, db, query) {
 
         var id = req.params.id;
 
-        query.getPessoaById(id, function (newPessoa) {
+        query.pessoa.getPessoaById(id, function (newPessoa) {
             io.sockets.emit('notifications', '');
 
             newPessoa.remove();
