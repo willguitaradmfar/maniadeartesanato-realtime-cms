@@ -1,7 +1,7 @@
 export gNOME=pessoa
 export gNOMEQ=Pessoa
 export gPATHAPI='../routes/api'
-export gPATHFUNCTIONS='../routes/'
+export gPATHFUNCTIONS='../routes/functions'
 export gSCHEMA="({'uid': 'String',
     				'nome': 'String',
     				'telephone': 'String'})"

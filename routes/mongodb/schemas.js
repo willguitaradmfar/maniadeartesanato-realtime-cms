@@ -75,6 +75,14 @@ var fotoSchema = mongoose.Schema(
     				'nome': 'String',
     				'nomeFile': 'String'})
 );
+
+var produtoSchema = mongoose.Schema(
+    ({'uid': 'String',
+    				'nome': 'String',
+    				'nomeCompleto': 'String',
+    				'preco': 'Number'
+    			})
+);
 //$varNewSchema$
 
 module.exports = {
@@ -82,5 +90,6 @@ module.exports = {
     Article: mongoose.model('article', articleSchema),
     Media: mongoose.model('media', mediaSchema),
     Pessoa: mongoose.model('pessoa', pessoaSchema),
-    Foto: mongoose.model('foto', fotoSchema)//$newSchema$
+    Foto: mongoose.model('foto', fotoSchema),
+    Produto: mongoose.model('produto', produtoSchema)//$newSchema$
 };

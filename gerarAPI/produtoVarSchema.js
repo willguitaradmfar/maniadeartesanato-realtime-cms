@@ -1,0 +1,1 @@
+    Produto: mongoose.model('produto', produtoSchema)//$newSchema$

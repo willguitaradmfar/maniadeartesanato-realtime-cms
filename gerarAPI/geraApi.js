@@ -176,7 +176,7 @@ var injectFunctions = function() {
 
 		var tpl = data.toString();	    
 	    
-	    tpl = tpl.replace(/\/\/\$requireFunctions\$/gi, "\n\tquery."+process.env.gNOME+"    = require('./routes/"+process.env.gNOME+"Function')(app, db);//$requireFunctions$");
+	    tpl = tpl.replace(/\/\/\$requireFunctions\$/gi, "\n\tquery."+process.env.gNOME+"    = require('./routes/functions/"+process.env.gNOME+"Function')(app, db);//$requireFunctions$");
 	    
 	    fs.writeFile(process.env.gFILEMAIN, tpl, function(err) {
 		    if(err)console.log(err);
