@@ -61,5 +61,33 @@ var api = function() {
 	});
 };
 
+
+
+//Functions
+var functions = function() {
+	fs.readFile('templateFunctions/functions.tpl', function read(err, data) {
+	    if (err) {
+	        throw err;
+	    }
+	    var tpl = data.toString();   
+
+	    tpl = tpl.replace(/\$\$name\$\$/gi, process.env.gNOME);
+	    tpl = tpl.replace(/\$\$nameQ\$\$/gi, process.env.gNOMEQ);
+
+		var schema = eval(process.env.gSCHEMA);
+		
+
+	    fs.writeFile(process.env.gNOME+"Function.js", tpl, function(err) {
+		    if(err) {
+		        console.log(err);
+		    } else {
+		        console.log("Gerado Functions "+process.env.gNOMEQ);
+		    }
+		});
+
+	});
+};
+
 schemaMongo();
 api();
+functions();

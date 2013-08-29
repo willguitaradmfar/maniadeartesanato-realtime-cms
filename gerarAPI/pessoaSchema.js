@@ -7,26 +7,8 @@ mongoose.connect('mongodb://' + config.mongodb.credentials + config.mongodb.host
 
 var pessoaSchema = mongoose.Schema(
     ({'uid': 'String',
-    'username': 'String',
-    'fullName': 'String',
-    'provider': 'String',
-    'telephone': 'String',
-    'image': String,
-    'role': {
-        'type': 'String',
-        'default': 'user'
-    },
-    'email': 'String',
-    'registerDate': {
-        'type': 'Date',
-        'default': 'Date.now'
-    },
-    'accountState': {
-        'type': 'String',
-        'default': 'waiting'
-    },
-    'pass': String,
-    'salt': String})
+    'nome': 'String',
+    'telephone': 'String'})
 );
 
 module.exports = {

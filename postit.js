@@ -42,6 +42,7 @@ app.get('/postit/config', function(req, res) {
 require('./routes/views/admin')(app, config, passport);
 require('./routes/api/articles')(app, config, db, query);
 require('./routes/api/users')(app, config, db, query);
+require('./routes/api/pessoaAPI')(app, config, db, query);
 require('./routes/api/media')(app, config, db, query);
 require('./routes/auth')(app, config, db, passport, TwitterStrategy);
 require('./routes/views/client')(app, config, query);

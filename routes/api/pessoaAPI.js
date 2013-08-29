@@ -24,9 +24,9 @@ module.exports = function(app, config, db, query) {
 
         //newPessoa.title = req.body.title;
         
- 		newPessoa.uid = req.body.uid
- 		newPessoa.nome = req.body.nome
- 		newPessoa.telephone = req.body.telephone
+        newPessoa.uid = req.body.uid
+        newPessoa.nome = req.body.nome
+        newPessoa.telephone = req.body.telephone
 
         newPessoa.save();
 
@@ -47,9 +47,9 @@ module.exports = function(app, config, db, query) {
 
         //newPessoa.title = req.body.title;
             
- 		newPessoa.uid = req.body.uid
- 		newPessoa.nome = req.body.nome
- 		newPessoa.telephone = req.body.telephone            
+        newPessoa.uid = req.body.uid
+        newPessoa.nome = req.body.nome
+        newPessoa.telephone = req.body.telephone            
 
             newPessoa.save();
 

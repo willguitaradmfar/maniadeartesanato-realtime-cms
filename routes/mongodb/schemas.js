@@ -64,8 +64,15 @@ var mediaSchema = mongoose.Schema({
     }   
 });
 
+var pessoaSchema = mongoose.Schema(
+    {'uid': 'String',
+    'nome': 'String',
+    'telephone': 'String'}
+);
+
 module.exports = {
     User: mongoose.model('user', userSchema),
     Article: mongoose.model('article', articleSchema),
-    Media: mongoose.model('media', mediaSchema)
+    Media: mongoose.model('media', mediaSchema),
+    Pessoa: mongoose.model('pessoa', pessoaSchema)
 };
