@@ -1,0 +1,51 @@
+.span12
+      #aviso(ng-class='msg.type')
+          button.close(type='button', data-dismiss='alert') ×
+          h4
+            | {{msg.title}}
+          | {{msg.content}}
+        a#modal-230951.btn.btn-inverse(href='#modal-container-230951', role='button', data-toggle='modal', ng-click='novo()') Novo Artigo
+      hr
+  table.table.table-bordered.table-hover
+    thead
+      tr
+        th
+          | Visitas
+        th
+          | Titulo
+        th
+          | Categoria
+        th
+          | Qtde Comentário
+        th
+          | Opções
+    tbody
+      tr(ng-repeat='artigo in artigos', ng-class='artigo.classNameRow')
+        td
+          | {{artigo.views}}
+        td
+          | {{artigo.title}}
+        td
+          | {{artigo.category}}
+        td
+          | {{artigo.comments.length}}
+        td
+          a#modal-230951.btn(href='#modal-container-230951', role='button', data-toggle='modal', ng-click='editar(artigo)', style="display : {{artigo.isEditar}}") Editar
+          a.btn(data-toggle='modal', ng-click='excluir(artigo)', style="display : {{artigo.isExcluir}}") Excluir
+  #modal-container-230951.modal.hide.fade(role='dialog', aria-labelledby='myModalLabel', aria-hidden='true')
+    .modal-header
+      button.close(type='button', data-dismiss='modal', aria-hidden='true') ×
+      h3#myModalLabel
+        | {{newArtigo.title.toUpperCase()}}
+        small @{{newArtigo.category}}
+    .modal-body
+      label Título
+      input(type='text', ng-model='newArtigo.title')
+      label Descrição
+      input(type='text', ng-model='newArtigo.description')
+      label Categoria
+      input(type='text', ng-model='newArtigo.category')
+      textarea.jqte-test(name='textarea')
+    .modal-footer
+      button.btn(data-dismiss='modal', aria-hidden='true') Fechar
+      button.btn.btn-primary(ng-click='salvar(newArtigo)', aria-hidden='true', data-dismiss='modal') Salvar

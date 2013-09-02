@@ -7,8 +7,7 @@ module.exports = function(app, config, query) {
     }
 
     app.get(homeURL, function(req, res) {
-        console.log(req.user);
-
+        console.log(req.user);        
         res.render('client/index', {
             user: req.user,
             env: config.env,

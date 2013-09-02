@@ -1,0 +1,74 @@
+!!! 5
+html(lang='en', ng-app='myApp')
+head
+    meta(charset='utf-8')
+    title Admin
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    meta(name='description', content='')
+    meta(name='author', content='')
+  
+    link(href='administrator/app/css/bootstrap.min.css', rel='stylesheet')
+    link(href='administrator/app/css/bootstrap-responsive.min.css', rel='stylesheet')
+    link(href='administrator/app/css/style.css', rel='stylesheet')
+    link(rel='stylesheet', href='administrator/app/css/app.css')
+    link(type='text/css', rel='stylesheet', href='/stylesheets/jqueryTE/jquery-te-1.4.0.css')
+  
+    link(rel='apple-touch-icon-precomposed', sizes='144x144', href='img/apple-touch-icon-144-precomposed.png')
+    link(rel='apple-touch-icon-precomposed', sizes='114x114', href='img/apple-touch-icon-114-precomposed.png')
+    link(rel='apple-touch-icon-precomposed', sizes='72x72', href='img/apple-touch-icon-72-precomposed.png')
+    link(rel='apple-touch-icon-precomposed', href='img/apple-touch-icon-57-precomposed.png')
+    link(rel='shortcut icon', href='img/favicon.png')
+    script(type='text/javascript', src='administrator/app/js/jquery.min.js')
+    script(type='text/javascript', src='administrator/app/js/bootstrap.min.js')
+    script(type='text/javascript', src='administrator/app/js/scripts.js')
+    script(type='text/javascript', src='/javascripts/vendors/jqueryTE/jquery-te-1.4.0.min.js', charset='utf-8')
+    script(type='text/javascript', src='/javascripts/vendors/socket.io.js', charset='utf-8')
+  body
+    .container-fluid
+      .row-fluid
+        .span12(ng-controller='MenuControle')
+          .navbar
+            .navbar-inner
+              .container-fluid
+                a.btn.btn-navbar(data-target='.navbar-responsive-collapse', data-toggle='collapse')
+                  span.icon-bar
+                  span.icon-bar
+                  span.icon-bar
+                a.brand(href='#') Administração
+                .nav-collapse.collapse.navbar-responsive-collapse
+                  ul.nav
+                    li(ng-class='classMenuPost', ng-click='atMenu(\'post\')')
+                      a(href='#/articles') Posts
+                    li(ng-class='classMenuUser', ng-click='atMenu(\'users\')')
+                      a(href='#/view2') Usuarios
+                    li(ng-class='classMenuFotos', ng-click='atMenu(\'fotos\')')
+                      a(href='#/fotos') Fotos
+                  ul.nav.pull-right
+                    li
+                      a(href='#') Link
+                    li.divider-vertical
+                    li.dropdown
+                      a.dropdown-toggle(data-toggle='dropdown', href='#')
+                        | Dropdown
+                        strong.caret
+                      ul.dropdown-menu
+                        li
+                          a(href='#') Action
+                        li
+                          a(href='#') Another action
+                        li
+                          a(href='#') Something else here
+                        li.divider
+                        li
+                          a(href='#') Separated link
+          .page-header
+            h1
+              | {{title}}
+              small Mania de Artesanato
+          div(ng-view='ng-view')
+    script(src='administrator/app/lib/angular/angular.js')
+    script(src='administrator/app/js/app.js')
+    script(src='administrator/app/js/services.js')
+    script(src='administrator/app/js/controllers.js')
+    script(src='administrator/app/js/filters.js')
+    script(src='administrator/app/js/directives.js')

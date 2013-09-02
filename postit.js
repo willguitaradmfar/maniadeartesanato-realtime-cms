@@ -5,16 +5,16 @@ var express         = require('express'),
     path            = require('path');
 
 var app             = express();
-    server          = require('http').createServer(app),
+    server          = require('http').createServer(app),    
     io              = require('socket.io').listen(server);
+
+var config          = require('./routes/config');
 
 var query           = {};
     query.fuctions  = require('./routes/functions/functions')(app, db);
 	query.pessoa    = require('./routes/functions/pessoaFunction')(app, db);
 	query.foto    = require('./routes/functions/fotoFunction')(app, db);
-	query.produto    = require('./routes/functions/produtoFunction')(app, db);//$requireFunctions$
-
-    config          = require('./routes/config');
+	query.produto    = require('./routes/functions/produtoFunction')(app, db);//$requireFunctions$    
     
 
 app.configure(function() {

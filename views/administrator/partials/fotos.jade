@@ -1,0 +1,50 @@
+.span12
+      #aviso(ng-class='msg.type')
+          button.close(type='button', data-dismiss='alert') ×
+          h4
+            | {{msg.title}}
+          | {{msg.content}}
+        a#modal-230951.btn.btn-inverse(href='#modal-container-230951', role='button', data-toggle='modal', ng-click='novo()') Nova Foto
+      hr
+  table.table.table-bordered.table-hover
+    thead
+      tr
+        th
+          | Nome
+        th
+          | Nome do arquivo
+        th
+          | Extenção
+        th
+          | Imagem
+        th
+          | Opções
+    tbody
+      tr(ng-repeat='foto in fotos', ng-class='foto.classNameRow')
+        td
+          | {{foto.nome}}
+        td
+          | {{foto.nomeFile}}
+        td
+          | {{foto.ext}}
+        td
+          img(ng-src='img/upload/{{foto._id}}.{{foto.ext}}')
+        td
+          a#modal-230951.btn(href='#modal-container-230951', role='button', data-toggle='modal', ng-click='editar(foto)') Editar
+          a.btn(data-toggle='modal', ng-click='excluir(foto)') Excluir
+  #modal-container-230951.modal.hide.fade(role='dialog', aria-labelledby='myModalLabel', aria-hidden='true')
+    .modal-header
+      button.close(type='button', data-dismiss='modal', aria-hidden='true') ×
+      h3#myModalLabel
+        | {{newFoto.nome}}
+        small @Carregar Foto
+    .modal-body
+      form#uploadFoto.rounded(method='post', enctype='multipart/form-data', action='/file-upload')
+        label Nome
+        input(type='text', ng-model='newFoto.nome')
+        label Arquivo
+        input(type='file', name='my_file', ng-model='newFoto.nomeFile')
+        input.button(type='button', name='Submit', value='Submit', ng-click='upload()')
+    .modal-footer
+      button.btn(data-dismiss='modal', aria-hidden='true') Fechar
+      button.btn.btn-primary(ng-click='salvar(newFoto)', aria-hidden='true', data-dismiss='modal') Enviar
