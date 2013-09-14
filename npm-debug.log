@@ -1,0 +1,30 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/local/bin/node', '/usr/local/bin/npm', 'start' ]
+2 info using npm@1.2.10
+3 info using node@v0.9.9
+4 verbose node symlink /usr/local/bin/node
+5 verbose read json /home/will/git/maniadeartesanato-realtime-cms/package.json
+6 verbose run-script [ 'prestart', 'start', 'poststart' ]
+7 info prestart postit@0.3.0
+8 info start postit@0.3.0
+9 verbose unsafe-perm in lifecycle true
+10 silly exec sh "-c" "PORT=8082 env=development node postit.js"
+11 silly sh,-c,PORT=8082 env=development node postit.js,/home/will/git/maniadeartesanato-realtime-cms spawning
+12 info postit@0.3.0 Failed to exec start script
+13 error postit@0.3.0 start: `PORT=8082 env=development node postit.js`
+13 error `sh "-c" "PORT=8082 env=development node postit.js"` failed with 1
+14 error Failed at the postit@0.3.0 start script.
+14 error This is most likely a problem with the postit package,
+14 error not with npm itself.
+14 error Tell the author that this fails on your system:
+14 error     PORT=8082 env=development node postit.js
+14 error You can get their info via:
+14 error     npm owner ls postit
+14 error There is likely additional logging output above.
+15 error System Linux 3.5.0-17-generic
+16 error command "/usr/local/bin/node" "/usr/local/bin/npm" "start"
+17 error cwd /home/will/git/maniadeartesanato-realtime-cms
+18 error node -v v0.9.9
+19 error npm -v 1.2.10
+20 error code ELIFECYCLE
+21 verbose exit [ 1, true ]

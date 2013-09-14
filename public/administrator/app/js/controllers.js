@@ -1,19 +1,5 @@
 'use strict';
 
-angular.module('myApp.resource', ["ngResource"])
-.factory('UserREST', function ($resource) {
-      return $resource('articles', {}, {
-        list: {method:'GET', isArray:true}
-      });
-  })
-.factory('FotoREST', function ($resource) {
-      return $resource('foto/:args', {}, {
-        list: {method:'GET', param : {args : 'args'}, isArray:true},       
-        save: {method:'POST', param : {args : 'args'}, isArray:true}
-      });
-  })
-  ;
-
 
 /* Controllers */
 
@@ -22,10 +8,19 @@ angular.module('myApp.controllers', []).
   	console.log('ArticlesControle');
 
     var foto = {};
-    foto.nome = 'William';
-    foto.nomeFile = 'WilliamFile';
+    foto.id = '52346570d3b4121010000005'
+    foto.nome = ' BLA BLA BLAWilliam Lima Pereira testes >>>>>>>>>>>>>>> ';
+    foto.nomeFile = 'WilliamFFFF';
 
-  	 FotoREST.save(foto);
+    FotoREST.save(foto, function (argument) {
+      FotoREST.get({id : argument.id}, function (res) {
+        res.nome = "Mudado HAHAH";
+        FotoREST.update({id : res._id}, res,function (resupdate) {
+          console.log(resupdate);
+        })        
+      })
+    });
+
 	
 	$scope.jqte = $('#modal-container-230951 .jqte-test').jqte();
 
