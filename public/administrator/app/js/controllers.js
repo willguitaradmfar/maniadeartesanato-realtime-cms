@@ -1,15 +1,17 @@
 'use strict';
 
-
 /* Controllers */
 
 angular.module('myApp.controllers', []).
-  controller('ArticlesControle', ['$scope', '$http', '$templateCache', 'FotoREST', function($scope, $http, $templateCache, FotoREST) {
+  controller('ArticlesControle', 
+      [
+        '$scope', 
+        '$http', '$templateCache', 'FotoREST', function($scope, $http, $templateCache, FotoREST) {
   	console.log('ArticlesControle');
 
     var foto = {};
     foto.id = '52346570d3b4121010000005'
-    foto.nome = ' BLA BLA BLAWilliam Lima Pereira testes >>>>>>>>>>>>>>> ';
+    foto.nome = ' BLA BLA BLAWilliam Lima Pereira testes  ';
     foto.nomeFile = 'WilliamFFFF';
 
     FotoREST.save(foto, function (argument) {
@@ -127,7 +129,7 @@ angular.module('myApp.controllers', []).
   	$scope.atMenu = function($t) {		
       $scope.classMenuUser = '';
       $scope.classMenuPost = '';
-      $scope.classMenuFotos = '';UserREST
+      $scope.classMenuFotos = '';
   		if($t == 'post'){
   			$scope.classMenuPost = 'active';			
   			$scope.title = 'Postagens';
@@ -142,7 +144,7 @@ angular.module('myApp.controllers', []).
 
   }])
 
-  .controller(', [', ['$scope', '$http', '$templateCache', function($scope, $http, $templateCache) {
+  .controller('FotosControle', ['$scope', '$http', '$templateCache', function($scope, $http, $templateCache) {
     console.log('FotosControle');
 
     
