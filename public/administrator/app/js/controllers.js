@@ -1,13 +1,31 @@
 'use strict';
 
+angular.module('myApp.resource', ["ngResource"])
+.factory('UserREST', function ($resource) {
+      return $resource('articles', {}, {
+        list: {method:'GET', isArray:true}
+      });
+  })
+.factory('FotoREST', function ($resource) {
+      return $resource('foto/:args', {}, {
+        list: {method:'GET', param : {args : 'args'}, isArray:true},       
+        save: {method:'POST', param : {args : 'args'}, isArray:true}
+      });
+  })
+  ;
+
 
 /* Controllers */
 
 angular.module('myApp.controllers', []).
-  controller('ArticlesControle', ['$scope', '$http', '$templateCache', function($scope, $http, $templateCache) {
+  controller('ArticlesControle', ['$scope', '$http', '$templateCache', 'FotoREST', function($scope, $http, $templateCache, FotoREST) {
   	console.log('ArticlesControle');
 
-  	 //PLUGINS JQUERY
+    var foto = {};
+    foto.nome = 'William';
+    foto.nomeFile = 'WilliamFile';
+
+  	 FotoREST.save(foto);
 	
 	$scope.jqte = $('#modal-container-230951 .jqte-test').jqte();
 
@@ -16,8 +34,6 @@ angular.module('myApp.controllers', []).
   	$scope.title = 'Artigos';
 
   	$scope.msg = {};
-  	
-
   	
 
     $scope.refresh = function(artigo) {
@@ -116,7 +132,7 @@ angular.module('myApp.controllers', []).
   	$scope.atMenu = function($t) {		
       $scope.classMenuUser = '';
       $scope.classMenuPost = '';
-      $scope.classMenuFotos = '';
+      $scope.classMenuFotos = '';UserREST
   		if($t == 'post'){
   			$scope.classMenuPost = 'active';			
   			$scope.title = 'Postagens';
@@ -131,7 +147,7 @@ angular.module('myApp.controllers', []).
 
   }])
 
-  .controller('FotosControle', ['$scope', '$http', '$templateCache', function($scope, $http, $templateCache) {
+  .controller(', [', ['$scope', '$http', '$templateCache', function($scope, $http, $templateCache) {
     console.log('FotosControle');
 
     

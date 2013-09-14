@@ -3,7 +3,7 @@
   "version": "0.3.0",
   "private": true,
   "scripts": {
-    "start": "PORT=8082 env=development nodemon postit.js"
+    "start": "PORT=8082 env=development node postit.js"
   },
   "dependencies": {
     "express"          : "3.2.6",
