@@ -1,6 +1,13 @@
 'use strict';
 
 
+
+var User = $resource('/user/:userId', {userId:'@id'});
+var user = User.get({userId:123}, function() {
+  user.abc = true;
+  user.$save();
+});
+
 /* Controllers */
 
 angular.module('myApp.controllers', []).
