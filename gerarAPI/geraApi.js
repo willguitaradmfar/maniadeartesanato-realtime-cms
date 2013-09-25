@@ -188,11 +188,43 @@ var injectFunctions = function() {
 	});
 };
 
-schemaMongo();
+var resourceRest = function() {
+	fs.readFile('templateResourceRestClient/resource.tpl', function read(err, data) {
+	    if (err) {
+	        throw err;
+	    }
+	    var tpl = data.toString();   
+
+	    tpl = tpl.replace(/\$\$name\$\$/gi, process.env.gNOME);
+	    tpl = tpl.replace(/\$\$nameQ\$\$/gi, process.env.gNOMEQ);
+
+		var schema = eval(process.env.gSCHEMA);
+
+		var gSCHEMA = "";// = process.env.gSCHEMA;
+
+		for(var i in schema){
+			gSCHEMA += '\n \t\tnew'+process.env.gNOMEQ+'.'+i+' = req.body.'+i;
+		}
+
+	    tpl = tpl.replace(/\$\$schema\$\$/gi, gSCHEMA);	    
+
+	    fs.writeFile(process.env.gNOME+"ResourceRest.js", tpl, function(err) {
+		    if(err) {
+		        console.log(err);
+		    } else {
+		        console.log("Gerado ResourceRest "+process.env.gNOMEQ);		        				
+		    }
+		});
+
+	});
+};
+
+/*schemaMongo();
 api();
 setTimeout(function() {
 	functions();
 }, 4000);
 setTimeout(function() {
 	varSchemaMongo();
-}, 2000);
+}, 2000);*/
+resourceRest();
