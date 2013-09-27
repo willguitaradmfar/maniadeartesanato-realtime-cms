@@ -1,0 +1,7 @@
+www
+node_modules
+.DS_Store
+public/index.html
+public/images/adminPanel.png
+routes/config.js
+/.project
